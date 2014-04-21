@@ -16,7 +16,7 @@
 <div class="container">
 
     <div class="jumbotron">
-        <h1>Todo App</h1>
+        <h1><b>T</b>odo(s)</h1>
     </div>
 
     <div class="row container">
@@ -38,13 +38,6 @@
     </div>
 
 </div>
-<!--TODO: What still needs doing:
-3. prettify -> involve some bootstrap stuffs. HTML is simple
-4. Clean up js -> If theres time, switch to BM for front end shizniz
-5. Clean up back end. Remove unused code
-6. Change database to postgres: just need to get username and password sorted
-7. Push changes to repo
-8. Get app up somewhere-->
 
 <script type="text/javascript" src="/assets/js/jquery-1.11.0.min.js" ></script>
 <script type="text/javascript" src="/assets/js/bootstrap.min.js" ></script>
