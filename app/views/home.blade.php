@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test</title>
+    <title>Todo App</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap-theme.css"/>
     <style type="text/css">
