@@ -81,6 +81,7 @@
 
     function bindClickEvents(){
         //Clicking on an item
+        $(".js_todo").unbind('dblclick');
         $(".js_todo").bind('dblclick', function(){
             //Collect relevant data
             $this = $(this);
@@ -100,25 +101,33 @@
             bindChangeEvents();
         });
 
-
-    }
-
-    function createInput(id, value, oldValue){
-        return "<input type='text' name='item_"+id+"' class='js_input' id='input_"+id+"' value='"+value+"' data-old-value='"+oldValue+"'/>";
+        $( ".js_delete").unbind( "click" );
+        $(".js_delete").bind('click', function(){
+            $this = $(this);
+            if(confirm('Are you sure you want to delete this todo?')){
+                deleteTodo($this.data('id'), $this);
+            }
+        });
     }
 
     function bindChangeEvents(){
         // If enter key is pressed or focus is lost, perform update
-        $(".js_input").keyup(function (e) {
+        $(".js_input").unbind('keyup');
+        $(".js_input").bind('keyup', function (e) {
             if (e.keyCode == 13) {
                 changeListener($(this));
             }
         });
 
+        $(".js_input").unbind('blur');
         $('.js_input').bind('blur', function(){
             //Time to update some sheet
             changeListener($(this));
         });
+    }
+
+    function createInput(id, value, oldValue){
+        return "<input type='text' name='item_"+id+"' class='js_input' id='input_"+id+"' value='"+value+"' data-old-value='"+oldValue+"'/>";
     }
 
     function changeListener($el){
@@ -160,7 +169,7 @@
                                 //Remove input field, show updated item
                                 $this.remove();
                                 $("#todo_"+id).html(response.description);
-                                $("#todo_"+id).show();
+                                $("#todo_"+id).parent().find('.js_clear').show();
                             } else if(response.status == 400 ) {
                                 console.log("Error: " + response.message);
                             }
@@ -175,13 +184,7 @@
             }
         }
 
-        $( ".js_delete").unbind( "click" );
-        $(".js_delete").bind('click', function(){
-            $this = $(this);
-            if(confirm('Are you sure you want to delete this todo?')){
-                deleteTodo($this.data('id'), $this);
-            }
-        });
+        bindClickEvents();
     }
 
     function deleteTodo(id, el){
