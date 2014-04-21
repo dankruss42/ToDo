@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap-theme.css"/>
     <style type="text/css">
-        .remove-icon {
+        .remove-icon .js_todo {
             cursor: pointer;
         }
     </style>
