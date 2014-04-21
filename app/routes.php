@@ -15,33 +15,3 @@ Route::get('/', 'HomeController@home');
 Route::delete('/todo/{id}', 'HomeController@deleteTodo');
 Route::post('/todo', 'HomeController@updateTodo');
 Route::post('/todo/new', 'HomeController@createTodo');
-
-
-
-//Route::get('/', 'HomeController@showWelcome');
-
-/*Route::get('test', function()
-{
-	return "meow!";
-});*/
-
-Route::get('/test', 'HomeController@showWelcome');
-Route::get('/test/{verb?}', 'HomeController@test');
-Route::get('form', 'HomeController@form');
-
-Route::post('submit', 'HomeController@submit');
-Route::get('submit', function()
-{
-    echo "GET SUBMIT";
-});
-
-/*Route::get('/test/{verb?}', function($verb = 'roaar!')
-{
-	return "roar: ".$verb;
-});*/
-
-
-Route::get('test/${meow}', function($meow)
-{
-	echo "meow: ".$meow;
-});

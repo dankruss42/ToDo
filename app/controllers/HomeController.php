@@ -19,10 +19,6 @@ class HomeController extends BaseController {
 
     public function home()
     {
-        /*$todo = new Todo();
-        $todo->setDescription("and another one gone!");
-        $todo->save();*/
-
         View::share('todos', Todo::all());
         return View::make('home')->nest('listView', 'list');
     }
@@ -78,33 +74,4 @@ class HomeController extends BaseController {
 
         return Response::json($response);
     }
-
-
-
-    public function showWelcome()
-    {
-        return View::make('hello');
-    }
-
-	public function test($v='meow')
-	{
-        $todos = Todo::all();
-
-        echo "todos: ".$todos;
-
-		return View::make('home.test')
-            ->with('v', $v);
-	}
-
-    public function form()
-    {
-        return View::make('home.form');
-    }
-
-    public function submit()
-    {
-
-        echo Input::get('first_name');
-    }
-
 }
