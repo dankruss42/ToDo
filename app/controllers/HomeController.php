@@ -63,6 +63,22 @@ class HomeController extends BaseController {
         return Response::json($response);
     }
 
+    public function createTodo(){
+        $description = $_POST['description'];
+        $response = array();
+
+        $todo = new Todo();
+        $todo->setDescription($description);
+        $todo->save();
+
+        $response['id'] = $todo->id;
+        $response['description'] = $todo->getDescription();
+        $response['code'] = 200;
+        $response['message'] = "success";
+
+        return Response::json($response);
+    }
+
 
 
     public function showWelcome()
