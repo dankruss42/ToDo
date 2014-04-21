@@ -11,7 +11,12 @@
 <div>
     {{ $listView }}
 </div>
-
+<!--TODO: What still needs doing:
+1. Make a primary input field to add todo items
+2. Add a delete button on todo items
+3. prettify -> involve some bootstrap stuffs. HTML is simple
+4. Clean up js -> If theres time, switch to BM for front end shizniz
+5. Clean up back end. Remove unused code-->
 
 <script type="text/javascript" src="/assets/js/jquery-1.11.0.min.js" ></script>
 <script type="text/javascript">
